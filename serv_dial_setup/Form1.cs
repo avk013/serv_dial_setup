@@ -91,19 +91,23 @@ namespace serv_dial_setup
         }
         private void Form1_Load(object sender, EventArgs e)
         {//узнать есть ли прва администратора
+         //manifest:<requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
             WindowsPrincipal pricipal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
             bool hasAdministrativeRight = pricipal.IsInRole(WindowsBuiltInRole.Administrator);
             if (!hasAdministrativeRight)
             {
                 label9.ForeColor = Color.Red;
+                install_service.BackColor= stop_servive.BackColor=remove_service.BackColor = Color.LightGray;
                 install_service.Enabled = stop_servive.Enabled = remove_service.Enabled = false;
             }
+            else label9.Visible = false;
             //
             fileSettings = Environment.CurrentDirectory +fileSettings;
             //MessageBox.Show(fileSettings);
             if (File.Exists(fileSettings)) ReadSetting();
             //иначе будем спрашивать где долежн быть файл, хотя легче этого не делать
             else {
+               
         string log_file = @"C:\dial\log.txt";
         string my_ip = "192.168.111.1";
         string[,] datas = { { "nameVPN1", "locIP1", "SerVPN1" },

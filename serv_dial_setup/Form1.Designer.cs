@@ -214,7 +214,7 @@
             // 
             // remove_service
             // 
-            this.remove_service.Location = new System.Drawing.Point(231, 257);
+            this.remove_service.Location = new System.Drawing.Point(231, 274);
             this.remove_service.Name = "remove_service";
             this.remove_service.Size = new System.Drawing.Size(134, 28);
             this.remove_service.TabIndex = 19;
@@ -224,7 +224,7 @@
             // 
             // stop_servive
             // 
-            this.stop_servive.Location = new System.Drawing.Point(11, 257);
+            this.stop_servive.Location = new System.Drawing.Point(9, 274);
             this.stop_servive.Name = "stop_servive";
             this.stop_servive.Size = new System.Drawing.Size(134, 28);
             this.stop_servive.TabIndex = 20;
@@ -234,13 +234,13 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(32, 0);
+            this.label9.Location = new System.Drawing.Point(17, 242);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(343, 20);
+            this.label9.Size = new System.Drawing.Size(343, 42);
             this.label9.TabIndex = 21;
-            this.label9.Text = "запускай с правами администратора!!!!";
+            this.label9.Text = "запускай с правами администратора!!!! для работы с сервисами";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -274,11 +274,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(176, 23);
+            this.button1.Location = new System.Drawing.Point(176, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 28);
+            this.button1.Size = new System.Drawing.Size(184, 34);
             this.button1.TabIndex = 26;
-            this.button1.Text = "расп.соединенийVPN";
+            this.button1.Text = "открыть расположение соединений VPN польз и  общее";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -286,7 +286,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 289);
+            this.ClientSize = new System.Drawing.Size(377, 307);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tb_n3);
             this.Controls.Add(this.tb_n2);
@@ -313,7 +314,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save_set);
-            this.Controls.Add(this.label9);
             this.Name = "Form1";
             this.Text = "serv_dial_setup";
             this.Load += new System.EventHandler(this.Form1_Load);
