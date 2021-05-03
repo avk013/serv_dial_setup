@@ -25,16 +25,20 @@ namespace serv_dial_setup
             // props.Fields.TextValue2 = textBox1.Text;
             props.Fields.user = textBox1.Text;
             props.Fields.pass = textBox2.Text;
-            props.Fields.locIP = textBox3.Text ;
-            data1[2] = tb_gIP1.Text;
-            data1[1] = tb_rIP1.Text;
-            data2[2] = tb_gIP2.Text;
-            data2[1] = tb_rIP2.Text;
-            data3[2] = tb_gIP3.Text;
-            data3[1] = tb_rIP3.Text;
+            props.Fields.locIP = textBox3.Text ;            
+         string[] data1 = { tb_n1.Text, tb_rIP1.Text, tb_gIP1.Text };
+         string[] data2 = { tb_n2.Text, tb_rIP2.Text, tb_gIP2.Text };
+         string[] data3 = { tb_n3.Text, tb_rIP3.Text, tb_gIP3.Text };         
             props.Fields.VPNname_locIP_inIP1 = data1;
             props.Fields.VPNname_locIP_inIP2 = data2;
             props.Fields.VPNname_locIP_inIP3 = data3;
+            props.Fields.mail_user = mail_user.Text;
+            props.Fields.mail_pass = mail_pass.Text;
+            props.Fields.mail_server = mail_server.Text;
+            props.Fields.mail_port = mail_port.Text;
+            props.Fields.mail_2user = mail_2addr.Text;
+            props.Fields.mail_captionmessage = mail_captionmessage.Text;
+            props.Fields.mail_TLS = mail_TLS.Checked;
             props.WriteXml();
         }
         //Чтение настроек
@@ -47,6 +51,9 @@ namespace serv_dial_setup
             data1 = props.Fields.VPNname_locIP_inIP1;
             data2 = props.Fields.VPNname_locIP_inIP2;
             data3 = props.Fields.VPNname_locIP_inIP3;
+            tb_n1.Text = data1[0];
+            tb_n2.Text = data2[0];
+            tb_n3.Text = data3[0];
             tb_gIP1.Text=data1[2];
             tb_rIP1.Text=data1[1] ;
             tb_gIP2.Text=data2[2];

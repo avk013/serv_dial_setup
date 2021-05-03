@@ -19,6 +19,14 @@ namespace serv_dial_setup
         public string[] VPNname_locIP_inIP1 = { "pro1", "192.168.1.11", "172.16.1.11" };
         public string[] VPNname_locIP_inIP2 = { "pro2", "192.168.1.12", "172.16.1.12" };
         public string[] VPNname_locIP_inIP3 = { "pro3","192.168.1.13", "172.16.1.13"} ;
+        public String mail_user;
+        public String mail_server;
+        public String mail_port;
+        public String mail_pass;
+        public String mail_2user;
+        public String mail_captionmessage;
+        public Boolean mail_TLS;
+
         // public DateTime DateValue = new DateTime(2011, 1, 1);
         //public Decimal DecimalValue = 555;
         //public Boolean BoolValue = true;
@@ -41,27 +49,24 @@ namespace serv_dial_setup
             using (TextWriter writer = new StreamWriter(Fields.XMLFileName))
             {
                 ser.Serialize(writer, Fields);
-                // writer.Flush();
-                // writer.Close();
+                // writer.Flush(); // writer.Close();
             }
-            //   MessageBox.Show("ok ");
-            //   MessageBox.Show(Fields.XMLFileName);
+            //   MessageBox.Show("ok "); //MessageBox.Show(Fields.XMLFileName);
         }
         //Чтение насроек из файла
         public void ReadXml()
-        {
-            if (File.Exists(Fields.XMLFileName))
-            {
-                XmlSerializer ser = new XmlSerializer(typeof(PropsFields));
-                TextReader reader = new StreamReader(Fields.XMLFileName);
-                Fields = ser.Deserialize(reader) as PropsFields;
-                reader.Close();
-            }
+        {  if (File.Exists(Fields.XMLFileName))
+                   {//но если файл с внутренними ошибками, то нужно удалять xml  
+                        XmlSerializer ser = new XmlSerializer(typeof(PropsFields));
+                        TextReader reader = new StreamReader(Fields.XMLFileName);
+                        Fields = ser.Deserialize(reader) as PropsFields;
+                        reader.Close();
+                    }             
             else
             {
-                MessageBox.Show("no Settongs XML file, creating defaults file");
+                MessageBox.Show("no Settings XML file, creating defaults file");
                 //можно написать вывод сообщения если файла не существует
             }
-        }
+        }        
     }
 }

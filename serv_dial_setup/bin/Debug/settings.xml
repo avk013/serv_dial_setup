@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropsFields xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XMLFileName>Y:\source\repos\serv_dial_setup\serv_dial_setup\bin\Debug\settings.xml</XMLFileName>
+  <user>user1</user>
+  <pass>password1</pass>
+  <locIP>127.0.0.1</locIP>
+  <VPNname_locIP_inIP1>
+    <string>32432432</string>
+    <string>192.168.1.11</string>
+    <string>172.16.1.11</string>
+  </VPNname_locIP_inIP1>
+  <VPNname_locIP_inIP2>
+    <string>324324</string>
+    <string>192.168.1.12</string>
+    <string>172.16.1.12</string>
+  </VPNname_locIP_inIP2>
+  <VPNname_locIP_inIP3>
+    <string>34324</string>
+    <string>192.168.1.13</string>
+    <string>172.16.1.13</string>
+  </VPNname_locIP_inIP3>
+  <mail_user>user</mail_user>
+  <mail_server>smtp_server</mail_server>
+  <mail_port>port</mail_port>
+  <mail_pass>password</mail_pass>
+  <mail_2user>addr@serv.null</mail_2user>
+  <mail_captionmessage>Server1 Connect</mail_captionmessage>
+  <mail_TLS>false</mail_TLS>
+</PropsFields>
