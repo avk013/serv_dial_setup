@@ -10,23 +10,16 @@ namespace serv_dial_setup
     public class PropsFields
     {
         public String XMLFileName = Environment.CurrentDirectory + "\\settings.xml";
-        //public String XMLFileName = @"c:\settings\set.txt";
         //Чтобы добавить настройку в программу просто добавьте туда строку вида -
         //public ТИП ИМЯ_ПЕРЕМЕННОЙ = значение_переменной_по_умолчанию;
-        public String user = @"user1";
-        public String pass = "password1";
+        public String user = @"user1", pass = "password1";        
         public String locIP = "127.0.0.1";
         public string[] VPNname_locIP_inIP1 = { "pro1", "192.168.1.11", "172.16.1.11" };
         public string[] VPNname_locIP_inIP2 = { "pro2", "192.168.1.12", "172.16.1.12" };
         public string[] VPNname_locIP_inIP3 = { "pro3","192.168.1.13", "172.16.1.13"} ;
-        public String mail_user;
-        public String mail_server;
-        public String mail_port;
-        public String mail_pass;
-        public String mail_2user;
-        public String mail_captionmessage;
-        public Boolean mail_TLS;
-
+        public String mail_user, mail_server, mail_port, mail_pass;
+        public String mail_2user, mail_captionmessage;
+        public Boolean mail_TLS;        
         // public DateTime DateValue = new DateTime(2011, 1, 1);
         //public Decimal DecimalValue = 555;
         //public Boolean BoolValue = true;

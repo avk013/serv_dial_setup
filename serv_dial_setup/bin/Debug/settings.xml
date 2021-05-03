@@ -11,7 +11,7 @@
   </VPNname_locIP_inIP1>
   <VPNname_locIP_inIP2>
     <string>324324</string>
-    <string>192.168.1.12</string>
+    <string>192.168.100.12</string>
     <string>172.16.1.12</string>
   </VPNname_locIP_inIP2>
   <VPNname_locIP_inIP3>
@@ -25,5 +25,5 @@
   <mail_pass>password</mail_pass>
   <mail_2user>addr@serv.null</mail_2user>
   <mail_captionmessage>Server1 Connect</mail_captionmessage>
-  <mail_TLS>false</mail_TLS>
+  <mail_TLS>true</mail_TLS>
 </PropsFields>
