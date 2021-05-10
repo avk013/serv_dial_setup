@@ -9,7 +9,7 @@ namespace serv_dial_setup
     //Класс определяющий какие настройки есть в программе
     public class PropsFields
     {
-        public String XMLFileName = Environment.CurrentDirectory + "\\settings.xml";
+        public String XMLFileName = "";// Environment.CurrentDirectory + "\\settings.xml";
         //Чтобы добавить настройку в программу просто добавьте туда строку вида -
         //public ТИП ИМЯ_ПЕРЕМЕННОЙ = значение_переменной_по_умолчанию;
         public String user = @"user1", pass = "password1";        

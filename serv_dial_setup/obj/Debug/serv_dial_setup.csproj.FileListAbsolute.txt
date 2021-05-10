@@ -1,9 +1,9 @@
 Y:\source\repos\serv_dial_setup\serv_dial_setup\bin\Debug\serv_dial_setup.exe
 Y:\source\repos\serv_dial_setup\serv_dial_setup\bin\Debug\serv_dial_setup.pdb
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.csprojAssemblyReference.cache
-Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.Form1.resources
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.Properties.Resources.resources
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.csproj.GenerateResource.cache
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.csproj.CoreCompileInputs.cache
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.exe
 Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.pdb
+Y:\source\repos\serv_dial_setup\serv_dial_setup\obj\Debug\serv_dial_setup.ServDial_mf.resources

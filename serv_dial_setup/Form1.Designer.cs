@@ -1,6 +1,6 @@
 ﻿namespace serv_dial_setup
 {
-    partial class Form1
+    partial class ServDial_mf
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -56,17 +56,17 @@
             this.tb_n3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mail_user = new System.Windows.Forms.TextBox();
-            this.mail_server = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.mail_port = new System.Windows.Forms.TextBox();
-            this.mail_TLS = new System.Windows.Forms.CheckBox();
-            this.mail_pass = new System.Windows.Forms.TextBox();
-            this.mail_2addr = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.mail_captionmessage = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.mail_2addr = new System.Windows.Forms.TextBox();
+            this.mail_pass = new System.Windows.Forms.TextBox();
+            this.mail_port = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.mail_server = new System.Windows.Forms.TextBox();
+            this.mail_user = new System.Windows.Forms.TextBox();
+            this.mail_TLS = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -315,30 +315,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "email";
             // 
-            // mail_user
+            // mail_captionmessage
             // 
-            this.mail_user.Location = new System.Drawing.Point(9, 23);
-            this.mail_user.Name = "mail_user";
-            this.mail_user.Size = new System.Drawing.Size(76, 20);
-            this.mail_user.TabIndex = 0;
-            this.mail_user.Text = "user";
+            this.mail_captionmessage.Location = new System.Drawing.Point(219, 53);
+            this.mail_captionmessage.Name = "mail_captionmessage";
+            this.mail_captionmessage.Size = new System.Drawing.Size(133, 20);
+            this.mail_captionmessage.TabIndex = 10;
+            this.mail_captionmessage.Text = "Server1 Connect";
             // 
-            // mail_server
+            // label14
             // 
-            this.mail_server.Location = new System.Drawing.Point(91, 23);
-            this.mail_server.Name = "mail_server";
-            this.mail_server.Size = new System.Drawing.Size(76, 20);
-            this.mail_server.TabIndex = 1;
-            this.mail_server.Text = "smtp_server";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(145, 56);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "CaptionMess";
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(79, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "@";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "To:";
+            // 
+            // mail_2addr
+            // 
+            this.mail_2addr.Location = new System.Drawing.Point(35, 53);
+            this.mail_2addr.Name = "mail_2addr";
+            this.mail_2addr.Size = new System.Drawing.Size(104, 20);
+            this.mail_2addr.TabIndex = 7;
+            this.mail_2addr.Text = "addr@serv.null";
+            // 
+            // mail_pass
+            // 
+            this.mail_pass.Location = new System.Drawing.Point(254, 23);
+            this.mail_pass.Name = "mail_pass";
+            this.mail_pass.Size = new System.Drawing.Size(95, 20);
+            this.mail_pass.TabIndex = 6;
+            this.mail_pass.Text = "password";
+            // 
+            // mail_port
+            // 
+            this.mail_port.Location = new System.Drawing.Point(173, 23);
+            this.mail_port.Name = "mail_port";
+            this.mail_port.Size = new System.Drawing.Size(76, 20);
+            this.mail_port.TabIndex = 4;
+            this.mail_port.Text = "port";
             // 
             // label12
             // 
@@ -349,13 +374,30 @@
             this.label12.TabIndex = 3;
             this.label12.Text = ":";
             // 
-            // mail_port
+            // label11
             // 
-            this.mail_port.Location = new System.Drawing.Point(173, 23);
-            this.mail_port.Name = "mail_port";
-            this.mail_port.Size = new System.Drawing.Size(76, 20);
-            this.mail_port.TabIndex = 4;
-            this.mail_port.Text = "port";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(79, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "@";
+            // 
+            // mail_server
+            // 
+            this.mail_server.Location = new System.Drawing.Point(91, 23);
+            this.mail_server.Name = "mail_server";
+            this.mail_server.Size = new System.Drawing.Size(76, 20);
+            this.mail_server.TabIndex = 1;
+            this.mail_server.Text = "smtp_server";
+            // 
+            // mail_user
+            // 
+            this.mail_user.Location = new System.Drawing.Point(9, 23);
+            this.mail_user.Name = "mail_user";
+            this.mail_user.Size = new System.Drawing.Size(76, 20);
+            this.mail_user.TabIndex = 0;
+            this.mail_user.Text = "user";
             // 
             // mail_TLS
             // 
@@ -367,49 +409,7 @@
             this.mail_TLS.Text = "StartTLS";
             this.mail_TLS.UseVisualStyleBackColor = true;
             // 
-            // mail_pass
-            // 
-            this.mail_pass.Location = new System.Drawing.Point(254, 23);
-            this.mail_pass.Name = "mail_pass";
-            this.mail_pass.Size = new System.Drawing.Size(95, 20);
-            this.mail_pass.TabIndex = 6;
-            this.mail_pass.Text = "password";
-            // 
-            // mail_2addr
-            // 
-            this.mail_2addr.Location = new System.Drawing.Point(35, 53);
-            this.mail_2addr.Name = "mail_2addr";
-            this.mail_2addr.Size = new System.Drawing.Size(104, 20);
-            this.mail_2addr.TabIndex = 7;
-            this.mail_2addr.Text = "addr@serv.null";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 56);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "To:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(145, 56);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "CaptionMess";
-            // 
-            // mail_captionmessage
-            // 
-            this.mail_captionmessage.Location = new System.Drawing.Point(219, 53);
-            this.mail_captionmessage.Name = "mail_captionmessage";
-            this.mail_captionmessage.Size = new System.Drawing.Size(133, 20);
-            this.mail_captionmessage.TabIndex = 10;
-            this.mail_captionmessage.Text = "Server1 Connect";
-            // 
-            // Form1
+            // ServDial_mf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -442,7 +442,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.save_set);
-            this.Name = "Form1";
+            this.Name = "ServDial_mf";
             this.Text = "serv_dial_setup";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace serv_dial_setup
 {
-    public partial class Form1 : Form
+    public partial class ServDial_mf : Form
     {
         public string[] data1;
         public string[] data2;
@@ -16,13 +16,14 @@ namespace serv_dial_setup
         #region Settings action
         Props props = new Props(); //экземпляр класса с настройками 
         //Запись настроек
-        private void WriteSetting()
+        private void WriteSetting(string XMLFile)
         {
             //Запись значения в ComboBox1
             // props.Fields.TextValue = comboBox1.Text;
             //Запись значения в checkBox1
             //  props.Fields.BoolValue = checkBox1.Checked;
             // props.Fields.TextValue2 = textBox1.Text;
+            props.Fields.XMLFileName = XMLFile;
             props.Fields.user = textBox1.Text;
             props.Fields.pass = textBox2.Text;
             props.Fields.locIP = textBox3.Text ;            
@@ -42,9 +43,10 @@ namespace serv_dial_setup
             props.WriteXml();
         }
         //Чтение настроек
-        private void ReadSetting()
+        private void ReadSetting(string XMLFile)
         {
-            props.ReadXml();
+            props.Fields.XMLFileName = XMLFile;
+            props.ReadXml();            
             textBox1.Text=props.Fields.user ;
             textBox2.Text=props.Fields.pass;
             textBox3.Text = props.Fields.locIP;
@@ -60,27 +62,36 @@ namespace serv_dial_setup
             tb_rIP2.Text=data2[1] ;
             tb_gIP3.Text=data3[2];
             tb_rIP3.Text=data3[1];
+            mail_user.Text = props.Fields.mail_user;
+            mail_pass.Text=props.Fields.mail_pass;
+            mail_server.Text=props.Fields.mail_server;
+            mail_port.Text=props.Fields.mail_port;
+            mail_2addr.Text=props.Fields.mail_2user;
+            mail_captionmessage.Text=props.Fields.mail_captionmessage;
+            mail_TLS.Checked=props.Fields.mail_TLS;
             //comboBox1.Text = props.Fields.TextValue;
             // checkBox1.Checked = props.Fields.BoolValue;
             //  textBox1.Text = props.Fields.TextValue2;
         }
         #endregion
-        public Form1()
+        public ServDial_mf()
         {
             InitializeComponent();
         }      
         string prefix_cmd = @" /c ",fileSettings= @"\settings.xml";
+        string prog_name = @"\serv_dial.exe", prog_name_full;
         string serviceName = "!ServDial";
         private void button1_Click(object sender, EventArgs e)
         {
             //readSetting();
-            WriteSetting();
+            WriteSetting(fileSettings);
         }
         private void button2_Click(object sender, EventArgs e)
         {
             //sc create !ServDial start=auto binPath= "c:\dial\dial.exe" DisplayName= "!ServDial" depend=lanmanworkstation obj= "LocalSystem"
-            //string commd = "sc create " + serviceName+" start=auto binPath=\"c:\\dial\\dial.exe\" DisplayName=\"!ServDial\" depend=lanmanworkstation obj=\"LocalSystem\"";
-            string commd = "sc create " + serviceName + " start=auto binPath=\"c:\\dial\\dial.exe\" DisplayName=\""+serviceName+"\" depend=lanmanworkstation obj=\"LocalSystem\"";
+            //string commd = "sc create " + serviceName+" start=auto binPath=\"c:\\dial\\dial.exe\" DisplayName=\"!ServDial\" depend=lanmanworkstation obj=\"LocalSystem\"";          
+            //string commd = "sc create " + serviceName + " start=auto binPath=\"c:\\dial\\dial.exe\" DisplayName=\""+serviceName+"\" depend=lanmanworkstation obj=\"LocalSystem\"";
+            string commd = "sc create " + serviceName + " start=auto binPath=\""+prog_name_full+"\" DisplayName=\"" + serviceName + "\" depend=lanmanworkstation obj=\"LocalSystem\"";
             //MessageBox.Show(commd);
             command_(@"cmd.exe", @" /c "+commd);
             commd = @"sc start "+serviceName;
@@ -110,12 +121,13 @@ namespace serv_dial_setup
             else label9.Visible = false;
             //
             fileSettings = Environment.CurrentDirectory +fileSettings;
+            prog_name_full = Environment.CurrentDirectory + prog_name;
             //MessageBox.Show(fileSettings);
-            if (File.Exists(fileSettings)) ReadSetting();
+            if (File.Exists(fileSettings)) ReadSetting(fileSettings);
             //иначе будем спрашивать где долежн быть файл, хотя легче этого не делать
             else {
                
-        string log_file = @"C:\dial\log.txt";
+       // string log_file = @"C:\dial\log.txt";
         string my_ip = "192.168.111.1";
         string[,] datas = { { "nameVPN1", "locIP1", "SerVPN1" },
                             { "nameVPN2", "locIP2", "SerVPN2" },
@@ -132,6 +144,7 @@ namespace serv_dial_setup
                 tb_gIP3.Text = datas[2, 1];
                 tb_rIP3.Text = datas[2, 2];
                 tb_n3.Text = datas[2, 0];
+
                 }
         }
         private void button1_Click_1(object sender, EventArgs e)
