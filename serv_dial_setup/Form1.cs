@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Security.Principal;
+using System.ServiceProcess;
 using System.Text;
 using System.Windows.Forms;
 
@@ -74,6 +75,48 @@ namespace serv_dial_setup
             //  textBox1.Text = props.Fields.TextValue2;
         }
         #endregion
+        //получаем статус службы ??? а если ее вообще такой нет????
+        private string status_process(string name_process)
+        { string status="xz";     
+            //if (ctl == null)
+                ServiceController sc = new ServiceController(name_process);
+            bool ServiceIsInstalled = false;
+            try
+            {
+                // actually we need to try access ANY of service properties
+                // at least once to trigger an exception
+                // not neccessarily its name
+                string ServiceName = sc.DisplayName;
+                ServiceIsInstalled = true;
+                switch (sc.Status)
+                {
+                    case ServiceControllerStatus.Running:
+                        return "Running";
+                    case ServiceControllerStatus.Stopped:
+                        return "Stopped";
+                    case ServiceControllerStatus.Paused:
+                        return "Paused";
+                    case ServiceControllerStatus.StopPending:
+                        return "Stopping";
+                    case ServiceControllerStatus.StartPending:
+                        return "Starting";
+                    default:
+                        return "Status Changing";
+                }
+            }
+            catch (InvalidOperationException) { }
+            finally
+            {
+
+                sc.Close();
+                status= "not installed";
+            }
+            // if (sc.Status.Equals(ServiceControllerStatus.Stopped)) status = "stopped";
+            //if (sc.Status.Equals(ServiceControllerStatus.Running)) status = "running";
+            //  status=sc.Status.ToString();
+            return status;            
+            
+        }
         public ServDial_mf()
         {
             InitializeComponent();
@@ -146,6 +189,8 @@ namespace serv_dial_setup
                 tb_n3.Text = datas[2, 0];
 
                 }
+            string status=status_process(serviceName);
+            if (status== "not installed") { stop_servive.Enabled = remove_service.Enabled = false; }
         }
         private void button1_Click_1(object sender, EventArgs e)
         {  // файл настроек ВПН для текущего пользователя - откр.папку
